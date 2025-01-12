@@ -36,13 +36,7 @@ public class Stopwatch implements ActionListener {
         minutes_string = String.format("%02d", minutes);
         hours_string  = String.format("%02d", hours);
         timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
-
-
-
     }
-
-
-
     });
 
     ArrayList<String> laps = new ArrayList<>();
@@ -54,15 +48,6 @@ public class Stopwatch implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(550,550);
         frame.setLayout(null);
-
-
-
-
-
-
-
-
-
 
         timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
         timeLabel.setBounds(100,50,400,100);
@@ -143,26 +128,27 @@ public class Stopwatch implements ActionListener {
 
 
 
-    startButton.addMouseListener(new java.awt.event.MouseAdapter(){
-        public void mouseEntered(java.awt.event.MouseEvent evt){
-            startButton.setBackground(new Color(40, 167, 69));
-        }
-        public void mouseExited(java.awt.event.MouseEvent evt){
-            startButton.setBackground(new Color(49, 167, 69));
+        startButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                startButton.setBackground(new Color(40, 167, 69)); // Warna hijau terang
+            }
 
-        }
-    });
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                startButton.setBackground(new Color(49, 167, 69)); // Warna hijau gelap
+            }
+        });
 
-    resetButton.addMouseListener(new java.awt.event.MouseAdapter(){
-        public void mouseEntered(java.awt.event.MouseEvent evt){
-            resetButton.setBackground(new Color(199, 0, 57));
-        }
-        public void mouseExited(java.awt.event.MouseEvent evt){
-            resetButton.setBackground(new Color(199, 0, 57));
-        }
-    });
+        resetButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                resetButton.setBackground(new Color(220, 53, 69)); // Warna merah terang (lebih hidup)
+            }
 
-    frame.add(startButton);
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                resetButton.setBackground(new Color(199, 0, 57)); // Warna merah gelap (aslinya)
+            }
+        });
+
+     frame.add(startButton);
     frame.add(resetButton);
     frame.add(timeLabel);
     frame.setVisible(true);
